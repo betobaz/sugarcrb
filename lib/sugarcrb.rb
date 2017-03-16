@@ -62,7 +62,7 @@ class Sugarcrb
       response = case method
         when "post" then RestClient.post "#{@host}/rest/v10/#{endpoint}", data, headers={"OAuth-Token" => @access_token}
         when "get" then RestClient.get "#{@host}/rest/v10/#{endpoint}", headers={"OAuth-Token" => @access_token}
-        when "put" then RestClient.put "#{@host}/rest/v10/#{endpoint}", data, headers={"OAuth-Token" => @access_token}
+        when "put" then RestClient.put "#{@host}/rest/v10/#{endpoint}", JSON.generate(data), :"OAuth-Token" => @access_token, :content_type => :json
         when "delete" then RestClient.delete "#{@host}/rest/v10/#{endpoint}", headers={"OAuth-Token" => @access_token}
       end
 
