@@ -33,13 +33,13 @@ sugarcrb = Sugarcrb.new("https://instance.sugarondemand.com","admin","xxxxxx","t
 Call endpoint
 
 ```ruby
-response = sugarcrm.call "<method>", "<url endpoint>", <data>
+response = sugarcrb.call "<method>", "<url endpoint>", <data>
 ```
 
 Create a bean
 
 ```ruby
-response = sugarcrm.call "post", "Accounts", {
+response = sugarcrb.call "post", "Accounts", {
     "name" => "My Account"
 }
 account_data = JSON.load(response)
@@ -48,7 +48,9 @@ account_data = JSON.load(response)
 List beans
 
 ```ruby
-response = sugarcrm.call "get", "Accounts"
+response = sugarcrb.call "get", "<module>"
+
+response = sugarcrb.call "get", "Accounts"
 accounts_data = JSON.load(response)
 accounts_data['records']
 ```
@@ -56,18 +58,18 @@ accounts_data['records']
 Get a bean
 
 ```ruby
-response = sugarcrm.call "get", "Accounts/<id>"
+response = sugarcrb.call "get", "<module>/<id>"
 
-response = sugarcrm.call "get", "Accounts/dffe626e-08d2-11e7-9113-06b20b8677ed"
+response = sugarcrb.call "get", "Accounts/dffe626e-08d2-11e7-9113-06b20b8677ed"
 account_data = JSON.load(response)
 ```
 
 Update a bean
 
 ```ruby
-response = sugarcrm.call "put", "Accounts/<id>", <data>
+response = sugarcrb.call "put", "<module>/<id>", <data>
 
-response = sugarcrm.call "put", "Accounts/dffe626e-08d2-11e7-9113-06b20b8677ed", {
+response = sugarcrb.call "put", "Accounts/dffe626e-08d2-11e7-9113-06b20b8677ed", {
     "name" => "My Favorite Account"
 }
 account_data = JSON.load(response)
@@ -76,9 +78,9 @@ account_data = JSON.load(response)
 Delete a bean
 
 ```ruby
-response = sugarcrm.call "delete", "Accounts/<id>"
+response = sugarcrb.call "delete", "<module>/<id>"
 
-response = sugarcrm.call "delete", "Accounts/dffe626e-08d2-11e7-9113-06b20b8677ed"
+response = sugarcrb.call "delete", "Accounts/dffe626e-08d2-11e7-9113-06b20b8677ed"
 if response.code == 200 then
     puts "deleted"
 end
