@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["pedroalbertose007@gmail.com"]
 
   spec.summary       = "Sugarcrm client"
-  spec.description   = "Gem to use create a cliente to SugarCRM by API rest V10"
+  spec.description   = "Gem to create a client to Consume SugarCRM's API rest V10"
   spec.homepage      = "https://rubygems.org/gems/sugarcrb"
   spec.license       = "MIT"
 
