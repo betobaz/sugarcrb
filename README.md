@@ -39,6 +39,7 @@ response = sugarcrb.call "<method>", "<url endpoint>", <data>
 Create a bean
 
 ```ruby
+response = sugarcrb.call "post", "<module>", <data>
 response = sugarcrb.call "post", "Accounts", {
     "name" => "My Account"
 }
