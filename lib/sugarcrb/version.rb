@@ -1,3 +1,3 @@
-module Sugarcrb
-  VERSION = "0.1.3"
+class Sugarcrb
+  VERSION = "0.1.7"
 end
