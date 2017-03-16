@@ -22,7 +22,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Login
+
+```ruby
+sugarcrb = Sugarcrb.new(<host>,<username>,<password>,<platform>,<client id>,<client secret>)
+```
+
+Call endpoint
+
+```ruby
+response = @sugarcrm.call "<method>", "<url endpoint>", {<data>}
+```
+
+
 
 ## Development
 
