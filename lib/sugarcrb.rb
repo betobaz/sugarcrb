@@ -21,12 +21,12 @@ class Sugarcrb
 
   def oauth2_token (refresh = false)
     data = {
-       "grant_type": "password",
-       "client_id": @client_id,
-       "client_secret": @client_secret,
-       "username": @username,
-       "password": @password,
-       "platform": @platform
+       "grant_type" => "password",
+       "client_id" => @client_id,
+       "client_secret" => @client_secret,
+       "username" => @username,
+       "password" => @password,
+       "platform" => @platform
     }
     response = RestClient.post "#{@host}/rest/v10/oauth2/token", data
     response_json = JSON.load(response)
@@ -39,10 +39,10 @@ class Sugarcrb
 
   def oauth2_refresh_token
     data = {
-       "grant_type": "refresh_token",
-       "refresh_token": @refresh_token,
-       "client_id": @client_id,
-       "client_secret": @client_secret,
+       "grant_type" => "refresh_token",
+       "refresh_token" => @refresh_token,
+       "client_id" => @client_id,
+       "client_secret" => @client_secret,
     }
     begin
       response = RestClient.post "#{@host}/rest/v10/oauth2/token", data
